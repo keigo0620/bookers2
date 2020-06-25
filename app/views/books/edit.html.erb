@@ -1,0 +1,32 @@
+<div class="center-block">
+<div class="container">
+<div class="row">
+<h1>Editing Book</h1>
+
+<%= form_for(@book) do |f| %>
+
+<% if @book.errors.any? %>
+  <h2><%= @book.errors.count %>error prohibited this obj from being saved:</h2>
+  <ul><% @book.errors.full_messages.each do |messages| %></ul>
+    <li><%= messages %></li>
+  <% end %>
+<% end %>
+  <h4>Title</h4>
+  <div class="field">
+    <%= f.text_field :title, :size => "50*50" %>
+  </div>
+  <div class="field">
+  <h4>Opinion</h4>
+    <%= f.text_area :body, :size => "50*50" %>
+  </div>
+
+  <div class="actions row">
+   <%= f.submit 'Update Book',class: "btn btn-primary"%>
+  </div>
+  <% end %>
+
+<%= link_to "Show", book_path %>
+<%= link_to "Back", books_path %>
+</div>
+</div>
+</div>
