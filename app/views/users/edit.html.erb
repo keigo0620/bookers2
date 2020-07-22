@@ -7,23 +7,23 @@
     <li><%= messages %></li>
   <% end %>
   <% end %>
-    <div class="field">
-        <%= f.label :name %>
+  <div class="field">
+    <%= f.label :name %>
     <%= f.text_field :name, class: "name" %>
     </div>
 
-        <label for="Image">Image</label>
-            <%= f.attachment_field :profile_image  %>
-    </div>
+    <label for="Image">Image</label>
+    <%= f.attachment_field :profile_image  %>
+  </div>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :introduction %>
     <%= f.text_area :introduction, class: "introduction" %>
-</div>
+  </div>
 
 
 
-    <div class="actions">
+  <div class="actions">
     <%= f.submit "Update User" %>
-</div>
+  </div>
 <% end %>
