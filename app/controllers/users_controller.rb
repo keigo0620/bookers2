@@ -33,6 +33,17 @@ end
     @book = Book.new#booksの新規投稿の情報を表示。
     @users = User.all#一覧ページ（usersのindexページ！）にuserのの投稿データの全てを表示＊＠マークのついているインスタンス変数はviewページに表示。
   end
+  #＝＝＝＝＝＝＝＝＝＝＝フォロー関係追加===========
+  def follows
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
+  end
+  #＝＝＝＝＝＝＝＝＝＝＝フォロー関係追加===========
   private
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
